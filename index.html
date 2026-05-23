@@ -155,7 +155,23 @@ function findNearest(){
     });
 
     let nearestThree = sorted.slice(0,3);
-
+    let badge = "";
+    if(branch === nearestThree[0]){
+  badge = `
+  <div style="
+  background:#ff6a00;
+  padding:8px;
+  border-radius:10px;
+  margin-bottom:10px;
+  font-size:14px;
+  font-weight:bold;
+  color:white;
+  ">
+  📍 الأقرب إليك
+  </div>
+  `;
+}
+    
     let html = "";
 
     nearestThree.forEach(function(branch){
