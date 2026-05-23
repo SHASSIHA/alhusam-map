@@ -31,11 +31,6 @@ body{
   box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* العنوان */
-.card h2{
-  margin-top:0;
-}
-
 /* الزر الرئيسي */
 button{
   width:90%;
@@ -89,7 +84,8 @@ footer{
 <!-- اللوجو -->
 <img src="./logo.png" class="logo">
 
-<div class="card">
+<!-- كارد الموقع -->
+<div class="card" id="locationCard">
 
 <h3>حدد موقعك حتى نوجهك لأقرب فرع عليك 📍</h3>
 
@@ -99,6 +95,7 @@ footer{
 
 </div>
 
+<!-- النتائج -->
 <div id="result"></div>
 
 <script>
@@ -221,6 +218,9 @@ function findNearest(){
     });
 
     document.getElementById("result").innerHTML = html;
+
+    /* اخفاء كارد الموقع */
+    document.getElementById("locationCard").style.display = "none";
 
   }, function(){
 
