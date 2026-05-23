@@ -3,89 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>شاصيها</title>
+
+<title>دقة الحسام | أقرب فرع</title>
 
 <style>
 
-body {
-  margin: 0;
-  font-family: Arial;
-   background: white;
-  color: #e9edf2;
-  text-align: center;
+body{
+  margin:0;
+  font-family:Arial;
+  background:white;
+  text-align:center;
 }
 
 /* اللوجو */
-.logo {
-  width: 140px;
-  margin-top: 20px;
+.logo{
+  width:140px;
+  margin-top:20px;
 }
 
-/* كارد */
-.card {
-  background: #1f2937;
-  color: white;
-  margin: 20px;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+/* الكارد */
+.card{
+  background:#1f2937;
+  color:white;
+  margin:20px;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
-.card h2,
-.card h3 {
-  color: white;
+/* العنوان */
+.card h2{
+  margin-top:0;
 }
 
-/* زر رئيسي */
-button {
-  width: 90%;
-  padding: 15px;
-  font-size: 18px;
-  background: #ff6a00;
-  border: none;
-  border-radius: 12px;
-  color: white;
-  margin-top: 20px;
-  cursor: pointer;
+/* الزر الرئيسي */
+button{
+  width:90%;
+  padding:15px;
+  font-size:18px;
+  background:#ff6a00;
+  border:none;
+  border-radius:12px;
+  color:white;
+  margin-top:20px;
+  cursor:pointer;
 }
 
-/* أزرار */
-.btn {
-  display: block;
-  width: 90%;
-  margin: 10px auto;
-  padding: 14px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+/* الأزرار */
+.btn{
+  display:block;
+  width:90%;
+  margin:10px auto;
+  padding:14px;
+  border-radius:12px;
+  text-decoration:none;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
 }
 
 /* Google Maps */
-.maps {
-  background: #374151;
+.maps{
+  background:#374151;
 }
 
 /* Waze */
-.waze {
-  background: #33ccff;
+.waze{
+  background:#33ccff;
+}
+
+/* Footer */
+footer{
+  margin-top:40px;
+  padding:20px;
+  font-size:14px;
+  color:#6b7280;
+  text-align:center;
 }
 
 </style>
 </head>
-  
+
 <body>
 
 <!-- اللوجو -->
 <img src="./logo.png" class="logo">
 
 <div class="card">
-  <h3>حدد موقعك حتى نوجهك لأقرب مركز عليك</h3>
 
-  <button onclick="findNearest()">
-    📍 تحديد موقعي
-  </button>
+<h3>حدد موقعك حتى نوجهك لأقرب فرع عليك 📍</h3>
+
+<button onclick="findNearest()">
+📍 تحديد موقعي
+</button>
+
 </div>
 
 <div id="result"></div>
@@ -95,20 +106,19 @@ button {
 const branches = [
 
 {name:"الحسام فرع الدورة", lat:33.232026563110225, lng:44.3968271542221},
- {name:"الحسام فرع نفق الشرطة", lat:33.29756355593572, lng:44.32367969050771},
- {name:"الحسام فرع الكرادة", lat:33.29302980467378, lng:44.44311240400205},
- {name:"الحسام فرع المنصور", lat:33.31735724463134, lng:44.34369627516562},
- {name:"الحسام فرع الطالبية", lat:33.37868731560286, lng:44.41434521749252},
- {name:"الحسام فرع الاعلام", lat:33.23859994460153, lng:44.33219338866326},
- {name:"الحسام فرع الموصل", lat:36.34887832648551, lng:43.19222610746132},
- {name:"الحسام فرع بغداد الجديدة", lat:33.313406712762884, lng:44.48191212408861},
- {name:"الحسام فرع العامرية", lat:33.29302981899732, lng:44.29291878533666},
- {name:"الحسام فرع بعقوبة", lat:33.740912066594866, lng:44.65147332766607},
- {name:"الحسام فرع شارع فلسطين", lat:33.35668969443898, lng:44.404127785336655},
- {name:"الحسام فرع كربلاء", lat:32.6315630269649, lng:43.99541008533667},
- {name:"الحسام فرع بسماية", lat:33.176787196188506, lng:44.61117225834845},
- {name:"الحسام فرع الحلة", lat:32.48641839971165, lng:44.39936753136022},
-
+{name:"الحسام فرع نفق الشرطة", lat:33.29756355593572, lng:44.32367969050771},
+{name:"الحسام فرع الكرادة", lat:33.29302980467378, lng:44.44311240400205},
+{name:"الحسام فرع المنصور", lat:33.31735724463134, lng:44.34369627516562},
+{name:"الحسام فرع الطالبية", lat:33.37868731560286, lng:44.41434521749252},
+{name:"الحسام فرع الاعلام", lat:33.23859994460153, lng:44.33219338866326},
+{name:"الحسام فرع الموصل", lat:36.34887832648551, lng:43.19222610746132},
+{name:"الحسام فرع بغداد الجديدة", lat:33.313406712762884, lng:44.48191212408861},
+{name:"الحسام فرع العامرية", lat:33.29302981899732, lng:44.29291878533666},
+{name:"الحسام فرع بعقوبة", lat:33.740912066594866, lng:44.65147332766607},
+{name:"الحسام فرع شارع فلسطين", lat:33.35668969443898, lng:44.404127785336655},
+{name:"الحسام فرع كربلاء", lat:32.6315630269649, lng:43.99541008533667},
+{name:"الحسام فرع بسماية", lat:33.176787196188506, lng:44.61117225834845},
+{name:"الحسام فرع الحلة", lat:32.48641839971165, lng:44.39936753136022}
 
 ];
 
@@ -126,14 +136,16 @@ function openWaze(lat,lng){
     `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 
   },1500);
+
 }
 
 function findNearest(){
 
-  if (!navigator.geolocation){
+  if(!navigator.geolocation){
 
     alert("جهازك لا يدعم الموقع");
     return;
+
   }
 
   navigator.geolocation.getCurrentPosition(function(pos){
@@ -143,35 +155,64 @@ function findNearest(){
 
     let sorted = branches.map(function(branch){
 
-  return {
-    ...branch,
-    dist: (distance(lat,lng,branch.lat,branch.lng) * 111).toFixed(1)
-   };
+      return {
+        ...branch,
+        dist:(distance(lat,lng,branch.lat,branch.lng)*111).toFixed(1)
+      };
 
-   });
+    });
 
     sorted.sort(function(a,b){
       return a.dist - b.dist;
     });
 
+    let nearestThree = sorted.slice(0,3);
+
     let html = "";
 
-    nearestThree.forEach(function(branch){
+    nearestThree.forEach(function(branch,index){
+
+      let badge = "";
+
+      if(index === 0){
+
+        badge = `
+        <div style="
+        background:#ff6a00;
+        color:white;
+        padding:8px;
+        border-radius:10px;
+        margin-bottom:10px;
+        font-size:14px;
+        font-weight:bold;
+        ">
+        📍 الأقرب إليك
+        </div>
+        `;
+
+      }
 
       html += `
 
-        <h2>${branch.name}</h2>
-        <p>📍 يبعد عنك ${branch.dist} كم</p>
+      <div class="card">
 
-        <a class="btn maps" target="_blank"
-        href="https://www.google.com/maps/dir/?api=1&destination=${branch.lat},${branch.lng}">
-        🚗 Google Maps
-        </a>
+      ${badge}
 
-        <a class="btn waze"
-        onclick="openWaze(${branch.lat},${branch.lng})">
-        🧭 فتح Waze
-        </a>
+      <h2>${branch.name}</h2>
+
+      <p style="opacity:0.8;">
+      📍 يبعد عنك ${branch.dist} كم
+      </p>
+
+      <a class="btn maps" target="_blank"
+      href="https://www.google.com/maps/dir/?api=1&destination=${branch.lat},${branch.lng}">
+      🚗 Google Maps
+      </a>
+
+      <a class="btn waze"
+      onclick="openWaze(${branch.lat},${branch.lng})">
+      🧭 فتح Waze
+      </a>
 
       </div>
 
@@ -190,17 +231,10 @@ function findNearest(){
 }
 
 </script>
-<footer style="
-margin-top:40px;
-padding:20px;
-font-size:14px;
-color:#6b7280;
-text-align:center;
-">
 
+<footer>
 Powered by <b>SHASSIHA</b> © 2026
-
 </footer>
-  
+
 </body>
 </html>
